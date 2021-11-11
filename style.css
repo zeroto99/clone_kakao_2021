@@ -45,6 +45,8 @@ header {
     position: fixed;
     top: 0;
     left: 0;
+    background-color: white;
+    z-index: 1;
 }
 
 .header-title {
@@ -125,12 +127,14 @@ main {
 }
 
 .news .news-left {
-    max-width: 666px;
-    padding: 0 18px;
+    position: sticky;
+    top: 100px;
+    align-self: flex-start;
+    margin-left: 18px;
 }
 
-.news .news-right {
-    min-width: 666px;
+.news .news-left, .news .news-right {
+    max-width: 594px;
 }
 
 .item-card {
@@ -205,4 +209,34 @@ main {
     right: 18px;
     font-size: 19px;
     color:#b1b1b1;
+}
+
+.news .news-right {
+    display: flex;
+    flex-direction: row;
+    margin: 0 18px 0 36px;
+}
+
+.news-right .item-card {
+    width: 297px;
+    margin-bottom: 30px;
+}
+
+.news-right .right-col-1 {
+    margin-right: 36px;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-right .right-col-1 .item-card,  .news-right .right-col-2 .item-card {
+    height: 420px;
+}
+
+.news-right .right-col-2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.news-right .right-col-2 .item-card:first-child, .news-right .right-col-2 .item-card:last-child {
+    height: 192px
 }

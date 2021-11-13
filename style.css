@@ -34,13 +34,13 @@ body {
     left: -9999px;
 }
 
-/* container */
+/********* container *********/
 .container {
     width: 1296px;
     margin: 0 auto;
 }
 
-/* header */
+/********* header *********/
 header {
     height: 72px;
     width: 100%;
@@ -89,7 +89,7 @@ nav {
     margin-left: 30px;
 }
 
-/* main */
+/********* main *********/
 main {
     padding-top: 150px;
 }
@@ -124,15 +124,15 @@ main {
 
 }
 
-/* main-content */
-.main-content {
+/********* content *********/
+.content {
     padding-top: 95px;
     display: flex;
     flex-wrap: wrap;
 }
 
-/* item-card 공통 */
-.item-card {
+/* item-news 공통 */
+.item-news {
     overflow: hidden;
     border-radius: 14px;
     box-shadow: 4px 12px 30px 6px rgb(0 0 0 / 9%);
@@ -140,21 +140,22 @@ main {
     transition: .5s;
 }
 
-.item-card:hover {
+.item-news:hover {
     transform: translateY(-5px);
 }
 
-.item-card .card-text {
-    padding: 25px 24px;
+.item-news .icon-news {
+    padding: 25px 24px 0;
+    display: block;
 }
 
-.card-text .megaphone {
+.icon-news .megaphone {
     width: 36px;
     height: 36px;
     vertical-align: bottom;
 }
 
-.card-text .speech-balloon {
+.icon-news .speech-balloon {
     height: 34px;
     border-radius: 13px;
     font-size: 13px;
@@ -166,7 +167,7 @@ main {
     position: relative;
 }
 
-.card-text .speech-balloon::before {
+.icon-news .speech-balloon::before {
     content: "";
     position: absolute;
     background: url(img/balloon-tail.svg);
@@ -175,65 +176,164 @@ main {
     width: 16px;
     height: 16px;
 }
-
-.card-text .card-title {
-    font-weight: 600;
-    margin-top: 15px;
-}
-
-.card-text .tag {
-    margin-top: 24px;
-    font-size: 14px;
-    color: #666;
-}
-
-.item-card a img {
-    display: block;
-    width: 100%;
+.item-news .link-news {
     cursor: pointer;
 }
 
-.item-card i {
+.link-news .title-news {
+    display: block;
+    padding: 0 24px;
+    margin: 13px 0 50px 0;
+}
+
+.link-news img {
+    display: block;
+    width: 100%;
+}
+
+.item-news .tag-news {
+    font-size: 14px;
+    color: #666;
+    position: absolute;
+    top: 178px;
+    left: 24px;
+}
+
+.item-news .btn-share {
     position: absolute;
     top: 37px;
     right: 18px;
     font-size: 19px;
     color:#b1b1b1;
+    border: none;
+    background: none;
 }
-/* item-card 공통 끝 */
+
+.half-height {
+    height: 185.5px;
+}
+/* item-news 공통 끝 */
 
 .sticky {
     position: sticky;
-    top: 170px;
+    top: 264px;
 }
 
-.main-content .cont-news-1, .main-content .cont-news-2 {
+.content .main-news, .content .sub-news {
     margin: 0 18px;
     width: 612px;
 }
 
-.cont-news-1 .item-card .card-title {
-    padding-right: 32px;
+.main-news .item-news .link-news .title-news {
     font-size: 32px;
     line-height: 45px;
 }
 
-.main-content .cont-news-2 {
+.content .sub-news {
     position: relative;
-    height: 876px;
+    height: 832px;
 }
 
-.cont-news-2 .item-card {
+.sub-news .item-news {
     width: 288px;
     position: absolute;
 }
 
-.cont-news-2 .item-card .card-title {
-    font-size: 22px;
-    line-height: 32px;
+.sub-news .left-side {
+    left: 0;
 }
 
-.cont-news-2 .item-card img:nth-child(2) {
+.sub-news .right-side {
+    right: 0;
+}
+
+.sub-news .item-news .title-news {
+    font-size: 22px;
+    line-height: 32px;
+    height: 64px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin-bottom: 40px;
+}
+
+.sub-news .item-news img:nth-child(2) {
     display: block;
     height: 223px;
+}
+
+.top-zero {
+    top: 0;
+}
+
+.top-215 {
+    top: 215.5px;
+}
+
+.top-431 {
+    top: 431px;
+}
+
+.top-646 {
+    top: 646.5px;
+}
+
+.top-703 {
+    top: 703px;
+}
+
+.top-862 {
+    top: 862px;
+}
+
+.sub-news .item-news .tag-news {
+    top: 149px;
+}
+
+/********* culture *********/
+.culture {
+    height: 540px;
+    margin: 30px 18px;
+    padding: 54px 66px 0;
+    border-radius: 14px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 2px 5px 40px 0 rgba(128, 119, 119, 0.08);
+}
+
+.culture .title-culture {
+    display: block;
+    font-size: 42px;
+    color: #000;
+}
+
+.culture .link-culture {
+    display: inline-block;
+    height: 36px;
+    margin-top: 36px;
+    padding: 9px 20px 0;
+    border-radius: 42px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #fff;
+    background-color: #000;
+    vertical-align: top;
+}
+
+.culture .link-culture i {
+    margin-left: 5px;
+    vertical-align: middle;
+    margin-bottom: 1px;
+}
+
+.culture img:nth-child(3) {
+    width: 100%;
+    max-width: 900px;
+    display: block;
+    margin: 50px auto 0;
+}
+
+.culture img:last-child {
+    display: none;
 }

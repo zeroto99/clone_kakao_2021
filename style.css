@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 * {
     box-sizing: border-box;
 }
@@ -100,16 +102,22 @@ main {
 
 .today-title {
     font-weight: bold;
+    padding-top: 27px;
+    line-height: 81px;
+    padding-left: 84px;
+    position: relative;
+}
+
+.today-title::before {
+    content: '';
     background-image: url(img/ico_date11.gif);
     background-size: 74px;
     background-repeat: no-repeat;
-    background-position: left 26px;
-    padding-top: 27px;
-    line-height: 75px;
-}
-
-.today-title > em {
-    padding-left: 80px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 29px;
+    left: 0;
 }
 
 .today-date {
@@ -119,30 +127,16 @@ main {
 /* main-content */
 .main-content {
     padding-top: 95px;
-}
-
-.news {
     display: flex;
     flex-wrap: wrap;
 }
 
-.news .news-left {
-    position: sticky;
-    top: 100px;
-    align-self: flex-start;
-    margin-left: 18px;
-}
-
-.news .news-left, .news .news-right {
-    max-width: 594px;
-}
-
+/* item-card 공통 */
 .item-card {
     overflow: hidden;
     border-radius: 14px;
     box-shadow: 4px 12px 30px 6px rgb(0 0 0 / 9%);
     position: relative;
-    cursor: pointer;
     transition: .5s;
 }
 
@@ -154,13 +148,13 @@ main {
     padding: 25px 24px;
 }
 
-.item-card .megaphone {
+.card-text .megaphone {
     width: 36px;
     height: 36px;
     vertical-align: bottom;
 }
 
-.item-card .speech-balloon {
+.card-text .speech-balloon {
     height: 34px;
     border-radius: 13px;
     font-size: 13px;
@@ -172,7 +166,7 @@ main {
     position: relative;
 }
 
-.item-card .speech-balloon::before {
+.card-text .speech-balloon::before {
     content: "";
     position: absolute;
     background: url(img/balloon-tail.svg);
@@ -182,61 +176,64 @@ main {
     height: 16px;
 }
 
-.item-card .card-title {
+.card-text .card-title {
     font-weight: 600;
-    padding-right: 24px;
     margin-top: 15px;
 }
 
-.item-card .tag {
+.card-text .tag {
     margin-top: 24px;
     font-size: 14px;
     color: #666;
 }
 
-.news-left .item-card {
-    height: 630px;
+.item-card a img {
+    display: block;
+    width: 100%;
+    cursor: pointer;
 }
 
-.news-left .item-card .card-title {
-    font-size: 32px;
-    line-height: 45px;
-}
-
-.news-left i {
+.item-card i {
     position: absolute;
     top: 37px;
     right: 18px;
     font-size: 19px;
     color:#b1b1b1;
 }
+/* item-card 공통 끝 */
 
-.news .news-right {
-    display: flex;
-    flex-direction: row;
-    margin: 0 18px 0 36px;
+.sticky {
+    position: sticky;
+    top: 170px;
 }
 
-.news-right .item-card {
-    width: 297px;
-    margin-bottom: 30px;
+.main-content .cont-news-1, .main-content .cont-news-2 {
+    margin: 0 18px;
+    width: 612px;
 }
 
-.news-right .right-col-1 {
-    margin-right: 36px;
-    display: flex;
-    flex-direction: column;
+.cont-news-1 .item-card .card-title {
+    padding-right: 32px;
+    font-size: 32px;
+    line-height: 45px;
 }
 
-.news-right .right-col-1 .item-card,  .news-right .right-col-2 .item-card {
-    height: 420px;
+.main-content .cont-news-2 {
+    position: relative;
+    height: 876px;
 }
 
-.news-right .right-col-2 {
-    display: flex;
-    flex-direction: column;
+.cont-news-2 .item-card {
+    width: 288px;
+    position: absolute;
 }
 
-.news-right .right-col-2 .item-card:first-child, .news-right .right-col-2 .item-card:last-child {
-    height: 192px
+.cont-news-2 .item-card .card-title {
+    font-size: 22px;
+    line-height: 32px;
+}
+
+.cont-news-2 .item-card img:nth-child(2) {
+    display: block;
+    height: 223px;
 }

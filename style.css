@@ -287,6 +287,14 @@ main {
     top: 862px;
 }
 
+.content .height-1048 {
+    height: 1048px;
+}
+
+.top-498 {
+    top: 498px;
+}
+
 .sub-news .item-news .tag-news {
     top: 149px;
 }

@@ -42,9 +42,9 @@ body {
 
 /********* header *********/
 header {
+    position: fixed;
     height: 72px;
     width: 100%;
-    position: fixed;
     top: 0;
     left: 0;
     background-color: white;
@@ -79,6 +79,22 @@ nav {
 .nav-icon {
     float: right;
     margin-top: -19px;
+    position: relative;
+}
+
+a::after {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(102, 102, 102, 0.055);
+    border-radius: 50%;
+    position: absolute;
+    left: -1px;
+    content: '';
+    display: none;
+}
+
+.nav-icon > a::after:hover {
+    display: block;
 }
 
 .nav-icon > a {
@@ -87,6 +103,33 @@ nav {
 
 .nav-icon > a:not(:first-of-type) {
     margin-left: 30px;
+}
+
+/********* 스크롤 내리면 fixed될 헤더 *********/
+.fixed-hd {
+    display: none;
+    position: fixed;
+    border-bottom: 1px solid #eee;
+    transition: top .2s ease-in-out;
+}
+
+.fixed-hd p {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 72px;
+    position: relative;
+    margin-left: 56px;
+}
+
+.fixed-hd p::before {
+    content: '';
+    position: absolute;
+    background-image: url(img/18.png);
+    width: 36px;
+    height: 36px;
+    background-size: cover;
+    top: 17px;
+    left: -48px;
 }
 
 /********* main *********/
@@ -98,6 +141,7 @@ main {
     font-size: 46px;
     font-weight: 600;
     letter-spacing: -1px;
+    margin-bottom: 95px;
 }
 
 .today-title {
@@ -126,7 +170,6 @@ main {
 
 /********* content *********/
 .content {
-    padding-top: 95px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -244,7 +287,7 @@ main {
 }
 
 .sub-news .right-side {
-    right: 0;
+    left: 324px;
 }
 
 .sub-news .item-news .title-news {
@@ -344,4 +387,338 @@ main {
 
 .culture img:last-child {
     display: none;
+}
+
+/********* etc *********/
+.etc {
+    margin-top: 36px;
+    font-size: 0;
+}
+
+.etc .etc-item {
+    width: 50%;
+    padding: 0 18px;
+    display: inline-block;
+}
+
+.etc .etc-item a {
+    display: block;
+    height: 360px;
+    padding: 36px 36px 0;
+    border-radius: 12px;
+    box-sizing: border-box;
+    box-shadow: 4px 12px 30px 6px rgb(0 0 0 / 9%);
+}
+
+.etc-item .item-service {
+    background-color: #fae100;
+    background-image: url(img/photo.jpg);
+    background-size: 230px;
+    background-repeat: no-repeat;
+    background-position: right 30px bottom 30px;
+}
+
+.etc-item .item-recruit {
+    background-color: #3c64ff;
+    background-image: url(img/photo.jpg);
+    background-size: 230px;
+    background-repeat: no-repeat;
+    background-position: right 30px bottom 30px;
+}
+
+.etc-item .item-service strong, 
+.etc-item .item-recruit strong {
+    display: block;
+    max-width: 430px;
+    font-size: 32px;
+    line-height: 44px;
+    color: #000;
+    word-break: keep-all;
+}
+
+.etc-item .item-service span, 
+.etc-item .item-recruit span {
+    display: inline-block;
+    font-size: 14px;
+    color: white;
+    padding: 16px 20px;
+    background-color: black;
+    border-radius: 30px;
+    margin-top: 24px;
+}
+
+.go-service i {
+    margin-left: 10px;
+    margin-top: -3px;
+    vertical-align: middle;
+}
+
+.go-recruit i {
+    margin-left: 10px;
+    transform: rotate(314deg);
+}
+
+.etc-collection {
+    text-align: center;
+    background-color: #dfdfdf;
+    padding: 16px 50px;
+    border-radius: 30px;
+    margin: 84px auto 0;
+    font-size: 18px;
+    display: block;
+    width: 260px;
+}
+
+/********* footer *********/
+footer {
+    border-top: 1px solid #ebebeb; 
+    margin-top: 180px;
+}
+
+footer .list-service {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 37px;
+    font-size: 14px; 
+}
+
+.list-service ul li {
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.list-service ul li:first-child {
+    position: relative;
+}
+
+.list-service ul li:first-child:hover::before {
+    position: absolute;
+    top: 4px;
+    left: -15px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ffcd00;
+    vertical-align: top;
+    content: "";
+}
+
+.list-service ul li:not(:first-child) {
+    color: #888;
+}
+ 
+.list-service ul li:not(:first-child):hover {
+    color: black;
+}
+
+.list-service ul:last-child li:nth-child(3) ~ li {
+    margin-top: 40px;
+    color: black;
+    position: relative;
+}
+
+.list-service ul:last-child li:nth-child(3) ~ li:hover::before {
+    position: absolute;
+    top: 4px;
+    left: -15px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ffcd00;
+    vertical-align: top;
+    content: "";
+}
+
+footer .list-etc {
+    padding-top: 120px;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.list-etc .list-inf {
+    display: flex;
+    align-items: baseline;
+    color: #888;
+    float: left;
+}
+
+.list-inf .item-inf {
+    cursor: pointer;
+    position: relative;
+}
+
+.list-inf .item-inf:hover {
+    color: black;
+}
+
+.list-inf .item-inf:not(:last-child) {
+    margin-right: 30px;
+}
+
+.list-inf .item-inf:nth-child(2) button, 
+.list-inf .item-inf:nth-child(3) button {
+    font-weight: bold;
+    color: black;
+}
+
+.item-inf button {
+    font-size: 12px;
+    border: none;
+    background: none;
+    padding: 0;
+    font-family: 'Pretendard-Regular';
+    color: #888;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+}
+
+.item-inf button::after {
+    content: '';
+    position: absolute;
+    background-image: url(img/chevron.png);
+    background-size: cover;
+    width: 9px;
+    height: 9px;
+    top: 2px;
+    right: -14px;
+}
+
+.item-inf button:hover {
+    color: black;
+}
+
+.item-inf button:hover::after {
+    transform: rotate(180deg);
+}
+
+.item-inf .sub-item {
+    display: none;
+    position: absolute;
+    bottom: 30px;
+    background-color: #eee;
+    border-radius: 12px;
+    line-height: 22px;
+    padding: 15px 0;
+}
+.sub-item li a {
+    white-space: nowrap;
+    padding: 0 10px;
+}
+
+.list-etc .link-relation {
+    width: 208px;
+    padding: 12px 20px;
+    background-color: #eee;
+    border-radius: 24px;
+    position: relative;
+    float: right;
+}
+
+.list-etc .link-relation::after {
+    content: '';
+    position: absolute;
+    background-image: url(img/more.png);
+    background-size: cover;
+    width: 13px;
+    height: 13px;
+}
+
+footer .rights {
+    font-size: 14px;
+    color: #888;
+    margin-top: 20px;
+    display: block;
+}
+
+@media screen and (max-width: 1439px) {
+    .container {
+        max-width: 972px;
+    }
+
+    .content {
+        flex-wrap: nowrap;
+    }
+
+    .content .sub-news {
+        width: 288px;
+    }
+
+    .content .sub-news-1 {
+        height: 1718px;
+    }
+
+    .sub-news-1 .item-news:nth-child(2) {
+        top: 1095.5px;
+        /* transform: translate3d(-324px, 1095.5px, 0); */
+    }
+
+    .sub-news-1 .item-news:nth-child(3) {
+        left: 0px;
+        top: 437px;
+        /* transform: translate3d(-324px, 437px, 0); */
+    }
+
+    .sub-news-1 .item-news:nth-child(4) {
+        left: 0px;
+        top: 658.5px;
+        /* transform: translate3d(-324px, 658.5px, 0); */
+    }
+
+    .sub-news-1 .item-news:last-child {
+        left: 0px;
+        top: 1532.5px;
+        /* transform: translate3d(-324px, 1532.5px, 0); */
+    }
+
+    .content .sub-news-2 {
+        height: 2153px;
+    }
+
+    .sub-news-2 .item-news:nth-child(2) {
+        top: 658.5px;
+        /* transform: translate3d(-324px, 1095.5px, 0); */
+    }
+
+    .sub-news-2 .item-news:nth-child(3) {
+        left: 0px;
+        top: 1532.5px;
+        /* transform: translate3d(-324px, 437px, 0); */
+    }
+
+    .sub-news-2 .item-news:nth-child(4) {
+        left: 0px;
+        top: 221.5px;
+        /* transform: translate3d(-324px, 658.5px, 0); */
+    }
+
+    .sub-news-2 .item-news:nth-child(5) {
+        left: 0px;
+        top: 1095.5px;
+        /* transform: translate3d(-324px, 658.5px, 0); */
+    }
+
+    .sub-news-2 .item-news:last-child {
+        left: 0px;
+        top: 1969.5px;
+        /* transform: translate3d(-324px, 1532.5px, 0); */
+    } 
+
+    .etc-item .item-service,
+    .etc-item .item-recruit {
+        background-size: 160px;
+    }
+
+    .list-etc .list-inf {
+        flex-wrap: wrap;
+        width: 500px;
+        row-gap: 15px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        max-width: 630px;
+    }
 }
